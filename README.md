@@ -1,4 +1,4 @@
-# Firebase with React
+# Firebase, React and axios
 
 Firebase is a comprehensive platform developed by Google that provides a wide array of services for building web and mobile applications. It offers Realtime Database, Firestore, Authentication etc.
 
