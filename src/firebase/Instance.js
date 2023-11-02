@@ -19,7 +19,7 @@ import axios from "axios";
 const url = "https://axios-43afa-default-rtdb.firebaseio.com/";
 
 const axios_instance = axios.create({
-    baseURL: {url}
+    baseURL: url
 });
 
 export {axios_instance}
