@@ -17,3 +17,9 @@ Firebase is a comprehensive platform developed by Google that provides a wide ar
 ### Base URL
 
 <li>The Data section consists of URL that is used in Axios</li>
+
+### Install axios
+
+```
+npm install axios
+```
