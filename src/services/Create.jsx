@@ -17,7 +17,7 @@ import { axios_instance } from "../firebase/Instance";
 
 const createTask = async(event, task, date)=>{
     const data = {
-        Task: task,
+        task: task,
         date: date
     }
     event.preventDefault();
