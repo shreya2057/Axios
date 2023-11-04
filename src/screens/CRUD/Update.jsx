@@ -6,14 +6,22 @@ import { axios_instance } from "../../firebase/Instance";
 function Update(){
     var [task, setTask] = useState("")
     var [oldDate, setOldDate] = useState("End Date of task")
+    var [taskId, setTaskId] = useState()
     async function get_current_data(event){
         event.preventDefault();
         var response = await axios_instance.get("/tasks.json");
         var data = response.data
         for(var task_id in data){
-            console.log(data[task_id].Task)
+            console.log(data[task_id].task)
+            if(data[task_id].task === task){
+                alert("Task Found");
+                setOldDate(data[task_id].date);
+                setTaskId(task_id);
+                break;
+            } else {
+                alert("Task Not Found");
+            }
         }
-        console.log(response.data);
 
     }
     return <div className="bg-slate-600 h-screen w-full">
@@ -35,7 +43,7 @@ function Update(){
                 <div className="block p-5 w-min">
                     <label className="font-bold">End Date</label>
                     <div className="my-3 border rounded-sm w-min">
-                        <input className="border rounded-sm bg-gray-300 w-72 text-slate-500" 
+                        <input className="border rounded-sm bg-gray-300 w-72 text-slate-700" 
                             disabled 
                             value={oldDate} 
                             type="text"
