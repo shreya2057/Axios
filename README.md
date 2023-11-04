@@ -32,3 +32,15 @@ npm install axios
 <li>Read operation</li>
 <li>Update operation</li>
 <li>Delete operation</li>
+
+## Axios vs Fetch API
+
+<li>Axios offers a simpler syntax and a clean interface for making HTTP requests. </li>
+
+<li>The response of Axios is easier to understand.</li>
+
+<li>Both Axios and Fetch use Promises.</li> 
+
+<li>Axios allows interceptors that can be set globally or per request.</li>
+
+<li>Axios can automatically detect HTTP error status codes and throw errors.</li>
