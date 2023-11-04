@@ -2,6 +2,8 @@
 
 Firebase is a comprehensive platform developed by Google that provides a wide array of services for building web and mobile applications. It offers Realtime Database, Firestore, Authentication etc.
 
+Axios is a popular JavaScript library that enables you to make HTTP requests from browsers. It provides a simple and intuitive way to interact with APIs and perform various HTTP requests.
+
 ## Connecting Firebase to React
 
 ### Creating Firebase project
