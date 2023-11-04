@@ -4,17 +4,16 @@ import NavBar from "../Components/NavBar";
 import { axios_instance } from "../../firebase/Instance";
 
 function Update(){
-    var [task, setTask] = useState("")
+    var [task_name, setTask] = useState("")
     var [oldDate, setOldDate] = useState("End Date of task")
     var [taskId, setTaskId] = useState()
+    var [newDate, setNewDate] = useState()
     async function get_current_data(event){
         event.preventDefault();
         var response = await axios_instance.get("/tasks.json");
         var data = response.data
         for(var task_id in data){
-            console.log(data[task_id].task)
-            if(data[task_id].task === task){
-                alert("Task Found");
+            if(data[task_id].task === task_name){
                 setOldDate(data[task_id].date);
                 setTaskId(task_id);
                 break;
@@ -33,6 +32,7 @@ function Update(){
                     <label className="font-bold">Task</label>
                     <div className="my-3 border rounded-sm w-min">
                         <input className="border rounded-sm bg-gray-300 w-72" 
+                            required
                             placeholder="Enter the task name" 
                             type="text"
                             onChange={(event)=>setTask(event.target.value)}
@@ -54,13 +54,16 @@ function Update(){
                     <label className="font-bold">New End Date</label>
                     <div className="my-3 border rounded-sm w-min">
                         <input className="border rounded-sm bg-gray-300 w-72"
-                            type="date"/>
+                            required
+                            type="date"
+                            onChange={(event)=> setNewDate(event.target.value)}
+                        />
                     </div>
                 </div>
                 <div className="border m-5 w-min">
                     <button 
                         className="m-0.5 px-5 py-3 border rounded-sm bg-gray-300 w-32"
-                        onClick={(event)=>update_task(task,event)}
+                        onClick={(event)=>update_task(task_name, taskId ,newDate, event)}
                     >
                         Update Task
                     </button>
