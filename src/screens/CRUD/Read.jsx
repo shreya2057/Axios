@@ -47,7 +47,7 @@ function Read(){
             <h1 className="text-2xl font-bold text-white">Task</h1>
             {
                 data.map((item,index)=>
-                    <List name={item.Task} date={item.date} key={index}/>
+                    <List name={item.task} date={item.date} key={index}/>
                 )
             }
         </div>
