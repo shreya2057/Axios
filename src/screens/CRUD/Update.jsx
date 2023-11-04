@@ -10,18 +10,19 @@ function Update(){
     var [newDate, setNewDate] = useState()
     async function get_current_data(event){
         event.preventDefault();
-        var response = await axios_instance.get("/tasks.json");
-        var data = response.data
-        for(var task_id in data){
-            if(data[task_id].task === task_name){
-                setOldDate(data[task_id].date);
-                setTaskId(task_id);
-                break;
-            } else {
-                alert("Task Not Found");
+        try{
+            var response = await axios_instance.get("/tasks.json");
+            var data = response.data
+            for(var task_id in data){
+                if(data[task_id].task === task_name){
+                    setOldDate(data[task_id].date);
+                    setTaskId(task_id);
+                    break;
+                } 
             }
+        }catch(error){
+            alert(error)
         }
-
     }
     return <div className="bg-slate-600 h-screen w-full">
         <NavBar/>
