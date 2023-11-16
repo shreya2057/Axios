@@ -1,5 +1,11 @@
 import axios from "axios";
 
+// instance -> An instance refers to a configured copy of the Axios library. 
+//          -> When an Axios instance is created, a copy of Axios with 
+//             predefined settings (base URL, headers, etc.) is created. 
+//          -> This allows to reuse the same configuration across multiple 
+//             requests.
+
 // axios.create() -> Method in Axios library used to create new instance
 //                   of Axios.
 //                -> axios.create({
